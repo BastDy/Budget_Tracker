@@ -12,4 +12,5 @@ class Expense < ApplicationRecord
     expense.month = expenses_date.month
     expense.year = expenses_date.year
   end
+
 end

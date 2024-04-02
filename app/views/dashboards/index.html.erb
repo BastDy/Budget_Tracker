@@ -4,13 +4,14 @@
     <div class=" row gap-1 text-center justify-content-evenly">
       <div class=" col-4 card">
         <div class="card-body">
-          <h2 class="card-title">Compte en banque</h2>
-          <p class="card-text" style="font-size:20px"><%= @user.total_amount %></p>
+          <h2 class="card-title pb-1">Compte en banque</h2>
+          <h4 class="card-text pb-1"><%= @user.total_amount %> €</h4>
         </div>
       </div>
       <div class="col-3 card">
         <div class="card-body">
-          <h2 class="card-title">Dépenses totales</h2>
+          <h2 class="card-title pb-1">Dépenses totales</h2>
+          <h4 class="card-text pb-1"><%= @total_expenses %> €</h4>
         </div>
       </div>
     </div>

@@ -1,11 +1,11 @@
-<div class="container row justify-content-center my-3 text-center">
-  <div class="col-6">
+<div class="row justify-content-center my-3 text-center">
+  <div class="col-4">
     <%= simple_form_for @expense do |f| %>
     <%= f.select :type_of_expense, Expense::TYPE_OF_EXPENSES, error: 'Le type de dépense est obligatoire' %>
     <%= f.input :amount, placeholder: "Montant" %>
     <%= f.input :description %>
     <%= f.input :expenses_date, as: :date %>
-    <%= f.button :submit, input_html: { class:"btn btn-success" } %>
+    <%= f.button :submit, input_html: { class:"btn-success" } %>
   <% end %>
 
   </div>

@@ -4,6 +4,7 @@ class DashboardsController < ApplicationController
   def index
     @categories = Categorie.all.where(user: @current_user)
     @expenses = Expense.all.where(user: @current_user)
+    @total_expenses = @expenses.where(type_of_expense: "Dépense").map(&:amount).sum
   end
 
   private
