@@ -1,11 +1,11 @@
 <h1 class="text-center my-5">Mes dépenses</h1>
-<div class="row my-5 ">
+<div class="row my-5 align-items-center">
   <div class="container col-8">
     <div class=" row gap-1 text-center justify-content-evenly">
       <div class=" col-4 card">
         <div class="card-body">
           <h2 class="card-title">Compte en banque</h2>
-          <p class="card-text"><%= @user.total_amount %></p>
+          <p class="card-text" style="font-size:20px"><%= @user.total_amount %></p>
         </div>
       </div>
       <div class="col-3 card">
@@ -15,22 +15,24 @@
       </div>
     </div>
   </div>
-  <div class="col-4">
-    <table class="table">
-      <thead>
+  <div class="col-4 px-5">
+    <table class="table table-bordered table-sm text-center">
+        <thead>
         <tr>
-          <th>Date</th>
-          <th>Amount</th>
-          <th>Description</th>
+          <th scope="col">Date</th>
+          <th scope="col">Description</th>
+          <th scope="col">Categorie</th>
+          <th scope="col">Montant</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="table-group-divider">
         <% @expenses.each do |expense| %>
-          <tr>
-            <td><%= expense.expense_date %></td>
-            <td><%= expense.amount %></td>
-            <td><%= expense.description %></td>
-          </tr>
+        <tr>
+          <th scope="row"><%= expense.expenses_date %></th>
+          <td><%= expense.description%></td>
+          <td><%= "" %></td>
+          <td><%= expense.amount %> €</td>
+        </tr>
         <% end %>
       </tbody>
     </table>
