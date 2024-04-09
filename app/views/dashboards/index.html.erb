@@ -1,0 +1,46 @@
+<h1 class="text-center my-5">Mes dépenses</h1>
+<div class="row my-5 align-items-center">
+  <div class="container col-8">
+    <div class=" row gap-1 text-center justify-content-evenly">
+      <div class=" col-4 card">
+        <div class="card-body">
+          <h2 class="card-title pb-1">Compte en banque</h2>
+          <h4 class="card-text pb-1"><%= @user.total_amount %> €</h4>
+        </div>
+      </div>
+      <div class="col-3 card">
+        <div class="card-body">
+          <h2 class="card-title pb-1">Dépenses totales</h2>
+          <h4 class="card-text pb-1"><%= @total_expenses %> €</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 px-5">
+    <table class="table table-bordered table-sm text-center">
+        <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Description</th>
+          <th scope="col">Categorie</th>
+          <th scope="col">Montant</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <% @expenses.last(5).each do |expense| %>
+        <tr>
+          <th scope="row"><%= expense.expenses_date %></th>
+          <td><%= expense.description%></td>
+          <td><%= "" %></td>
+          <td><%= expense.amount %> €</td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="container charts">
+  <%= line_chart({Football: 10, Basketball: 5, Golf: 15}) %>
+
+</div>
+<%= link_to "Nouvelle dépense", new_expense_path, class:"btn btn-success" %>

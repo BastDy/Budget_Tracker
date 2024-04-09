@@ -1,0 +1,13 @@
+<div class="row justify-content-center my-3 text-center">
+  <div class="col-4">
+    <%= simple_form_for @expense do |f| %>
+    <%= f.input :type_of_expense, collection: Expense::TYPE_OF_EXPENSES, error: 'Le type de dépense est obligatoire' %>
+    <%= f.input :amount, placeholder: "Montant" %>
+    <%= f.input :description %>
+    <%= f.association :categorie, label_method: :categorie_name%>
+    <%= f.input :expenses_date, as: :date, html5: true %>
+    <%= f.button :submit, input_html: { class:"btn-success" } %>
+  <% end %>
+
+  </div>
+</div>
